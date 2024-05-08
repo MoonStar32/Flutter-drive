@@ -2,8 +2,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class LosPage extends StatelessWidget {
-  const LosPage({super.key});
+class LossPage extends StatelessWidget {
+  const LossPage({super.key});
 
   @override
   Widget build(BuildContext context) {
