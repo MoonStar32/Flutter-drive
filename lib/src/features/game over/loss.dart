@@ -1,7 +1,9 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
-class VictoryPage extends StatelessWidget {
-  const VictoryPage({super.key});
+@RoutePage()
+class LosPage extends StatelessWidget {
+  const LosPage({super.key});
 
   @override
   Widget build(BuildContext context) {
