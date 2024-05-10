@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_drive/src/routes/routes.dart';
 
 @RoutePage()
-class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+class AouthMainPage extends StatefulWidget {
+  const AouthMainPage({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<AouthMainPage> createState() => _AouthMainPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _AouthMainPageState extends State<AouthMainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _SignUpPageState extends State<SignUpPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Регистрация',
+              'Авторизация',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 40,
@@ -30,41 +30,42 @@ class _SignUpPageState extends State<SignUpPage> {
             const SizedBox(
               height: 50,
             ),
-            const Padding(
-              padding: EdgeInsets.all(15),
-              child: SizedBox(
-                width: 300,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Ваше имя',
+            GestureDetector(
+              child: Container(
+                width: 290,
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Войти',
+                    style: TextStyle(
+                      color: Color(0xffCA99C5),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
+              ),
+              onTap: () {
+                AutoRouter.of(context).push(const LogInRoute());
+              },
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              'ИЛИ',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(15),
-              child: SizedBox(
-                width: 300,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Ваш email',
-                  ),
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(15),
-              child: SizedBox(
-                width: 300,
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Ваш пароль',
-                  ),
-                ),
-              ),
+            const SizedBox(
+              height: 25,
             ),
             GestureDetector(
               child: Container(
@@ -76,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 child: const Center(
                   child: Text(
-                    'Зарегистрироваться',
+                    'Зарегестрироваться',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -86,7 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               onTap: () {
-                AutoRouter.of(context).push(const MainRoute());
+                AutoRouter.of(context).push(const SignUpRoute());
               },
             ),
           ],

@@ -1,5 +1,6 @@
-import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_drive/src/routes/routes.dart';
 
 @RoutePage()
 class LossPage extends StatelessWidget {
@@ -28,7 +29,9 @@ class LossPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    AutoRouter.of(context).push(const MainRoute());
+                  },
                   child: const Text('Вернуться на главную'),
                 ),
                 TextButton(

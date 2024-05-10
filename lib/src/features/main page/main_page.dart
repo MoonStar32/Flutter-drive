@@ -1,15 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_drive/src/features/game%20over/loss.dart';
-import 'package:flutter_drive/src/features/game%20over/victory_page.dart';
+import 'package:flutter_drive/src/routes/routes.dart';
 
-void main() {
-  runApp(
-    const MaterialApp(
-      home: MainPage(),
-    ),
-  );
-}
-
+@RoutePage()
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
@@ -18,14 +11,11 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<Widget> l = [
-    const LossPage(),
-    const MainPage(),
-    const VictoryPage(),
-  ];
+  PageRouteInfo<dynamic> l = const LossRoute();
+
   void getPage(int index) {
     setState(() {
-      l;
+      AutoRouter.of(context).push(l);
     });
   }
 
