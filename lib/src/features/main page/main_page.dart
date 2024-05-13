@@ -75,7 +75,9 @@ class _MainPageState extends State<MainPage> {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                AutoRouter.of(context).push(const DrawingBoardRoute());
+              },
             ),
             // ButtonMain(
             //   width: 80,
