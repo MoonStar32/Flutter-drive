@@ -42,7 +42,7 @@ class _MainPageState extends State<MainPage> {
                 ),
                 child: const Center(
                   child: Text(
-                    'Онлайн игра',
+                    'Онлайн рисование',
                     style: TextStyle(
                       color: Color(0xffCA99C5),
                       fontSize: 20,
@@ -66,7 +66,7 @@ class _MainPageState extends State<MainPage> {
                 ),
                 child: const Center(
                   child: Text(
-                    'Одиночная игра',
+                    'Одиночное рисование',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,

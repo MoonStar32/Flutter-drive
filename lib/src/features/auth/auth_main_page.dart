@@ -77,7 +77,7 @@ class _AouthMainPageState extends State<AouthMainPage> {
                 ),
                 child: const Center(
                   child: Text(
-                    'Зарегестрироваться',
+                    'Зарегистрироваться',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
