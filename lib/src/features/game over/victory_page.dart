@@ -30,7 +30,9 @@ class VictoryPage extends StatelessWidget {
               children: [
                 TextButton(
                   onPressed: () {
-                    AutoRouter.of(context).push(const MainRoute());
+                    AutoRouter.of(context).push(
+                      const MainRoute(),
+                    );
                   },
                   child: const Text('Вернуться на главную'),
                 ),

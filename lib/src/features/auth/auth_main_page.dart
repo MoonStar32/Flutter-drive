@@ -50,7 +50,9 @@ class _AouthMainPageState extends State<AouthMainPage> {
                 ),
               ),
               onTap: () {
-                AutoRouter.of(context).push(const LogInRoute());
+                AutoRouter.of(context).push(
+                  const LogInRoute(),
+                );
               },
             ),
             const SizedBox(
@@ -87,7 +89,9 @@ class _AouthMainPageState extends State<AouthMainPage> {
                 ),
               ),
               onTap: () {
-                AutoRouter.of(context).push(const SignUpRoute());
+                AutoRouter.of(context).push(
+                  const SignUpRoute(),
+                );
               },
             ),
           ],

@@ -74,7 +74,9 @@ class _LogInPageState extends State<LogInPage> {
                 ),
               ),
               onTap: () {
-                AutoRouter.of(context).push(const MainRoute());
+                AutoRouter.of(context).push(
+                  const MainRoute(),
+                );
               },
             ),
           ],

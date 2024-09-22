@@ -17,8 +17,8 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: LogInRoute.page),
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: MainRoute.page, path: '/'),
-        AutoRoute(page: LossRoute.page),
-        AutoRoute(page: VictoryRoute.page),
+        // AutoRoute(page: LossRoute.page),
+        // AutoRoute(page: VictoryRoute.page),
         AutoRoute(page: DrawingBoardRoute.page),
       ];
 }

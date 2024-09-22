@@ -76,7 +76,9 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               onTap: () {
-                AutoRouter.of(context).push(const DrawingBoardRoute());
+                AutoRouter.of(context).push(
+                  const DrawingBoardRoute(),
+                );
               },
             ),
             // ButtonMain(
@@ -118,7 +120,7 @@ class _MainPageState extends State<MainPage> {
             label: '',
           ),
         ],
-        onTap: getPage,
+        // onTap: getPage,
       ),
     );
   }

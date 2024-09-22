@@ -86,7 +86,9 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               onTap: () {
-                AutoRouter.of(context).push(const MainRoute());
+                AutoRouter.of(context).push(
+                  const MainRoute(),
+                );
               },
             ),
           ],

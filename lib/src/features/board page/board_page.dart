@@ -1,15 +1,9 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:ui' as ui;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/semantics.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_drawing_board/flutter_drawing_board.dart';
 import 'package:flutter_drawing_board/paint_contents.dart';
 import 'package:flutter_drawing_board/paint_extension.dart';
@@ -47,6 +41,7 @@ class _DrawingBoardPageState extends State<DrawingBoardPage> {
     _transformationController.value = Matrix4.identity();
   }
 
+  @override
   void dispose() {
     _drawingBoardController.dispose();
     super.dispose();
@@ -114,14 +109,18 @@ class _DrawingBoardPageState extends State<DrawingBoardPage> {
                   showDefaultActions: true,
                   showDefaultTools: true,
                   defaultToolsBuilder: (Type t, _) {
-                    return DrawingBoard.defaultTools(t, _drawingBoardController)
+                    return DrawingBoard.defaultTools(
+                      t,
+                      _drawingBoardController,
+                    )
                       ..insert(
                         1,
                         DefToolItem(
                           icon: Icons.text_rotation_angledown,
                           isActive: t == Triangle,
-                          onTap: () => _drawingBoardController
-                              .setPaintContent(Triangle()),
+                          onTap: () => _drawingBoardController.setPaintContent(
+                            Triangle(),
+                          ),
                         ),
                       )
                       ..insert(
@@ -139,11 +138,12 @@ class _DrawingBoardPageState extends State<DrawingBoardPage> {
                               },
                             );
                             try {
-                              _drawingBoardController
-                                  .setPaintContent(ImageContent(
-                                await _getImage(_imageUrl),
-                                imageUrl: _imageUrl,
-                              ));
+                              _drawingBoardController.setPaintContent(
+                                ImageContent(
+                                  await _getImage(_imageUrl),
+                                  imageUrl: _imageUrl,
+                                ),
+                              );
                             } catch (e) {
                               //
                             } finally {
@@ -210,11 +210,11 @@ class Triangle extends PaintContent {
 
   @override
   void draw(Canvas canvas, Size size, bool deeper) {
-    final Path path = Path()
-      ..moveTo(A.dx, A.dy)
-      ..lineTo(B.dx, B.dy)
-      ..lineTo(C.dx, C.dy)
-      ..close();
+    // final Path path = Path()
+    //   ..moveTo(A.dx, A.dy)
+    //   ..lineTo(B.dx, B.dy)
+    //   ..lineTo(C.dx, C.dy)
+    //   ..close();
   }
 
   @override
@@ -264,7 +264,12 @@ class ImageContent extends PaintContent {
   @override
   void draw(Canvas canvas, Size size, bool deeper) {
     final Rect rect = Rect.fromPoints(startPoint, startPoint + this.size);
-    paintImage(canvas: canvas, rect: rect, image: image, fit: BoxFit.fill);
+    paintImage(
+      canvas: canvas,
+      rect: rect,
+      image: image,
+      fit: BoxFit.fill,
+    );
   }
 
   @override
